@@ -1,0 +1,5 @@
+
+public class TestBook {
+	Book b1 = new Book("Java for dummy", a1, 19.95, 1000);
+    System.out.println(b1.toString());   // explicit call Book
+}

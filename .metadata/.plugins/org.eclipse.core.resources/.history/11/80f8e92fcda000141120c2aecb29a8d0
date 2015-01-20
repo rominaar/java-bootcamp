@@ -1,0 +1,16 @@
+
+public class TestMyTime {
+	public static void main(String[] args) {
+		   
+		MyTime t1 = new MyTime(23, 44, 12);
+	    BigInteger i2 = new BigInteger("22222222222222222222222222222222222222222222222222");
+	    
+	    System.out.printf("Addition: ");
+	    System.out.println(i1.add(i2));
+	    
+	    System.out.printf("Multiplication: ");
+	    System.out.println(i1.multiply(i2));
+	   }
+	}
+
+}

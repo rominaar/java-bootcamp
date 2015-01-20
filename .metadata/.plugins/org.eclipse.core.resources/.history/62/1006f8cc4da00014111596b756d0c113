@@ -1,0 +1,32 @@
+
+public class Book {
+	private String name;
+	private Author author;
+	private double price;
+	private int qtyInStock;
+	
+	//1st constructor
+	public Book (String name, Author author, double price) {
+		this.setName(name);
+		this.author = author;
+		this.price = price;
+	}
+	
+	//2nd constructor
+	public Book (String name, Author author, double price, int qtyInStock) {
+		this.setName(name);
+		this.author = author;
+		this.price = price;
+		this.qtyInStock = qtyInStock;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+}

@@ -1,0 +1,7 @@
+
+public class TestBook {
+	Author a2 = new Author("Tan Ah Teck", "ahteck@somewhere.com", 'm');
+    System.out.println(a2.toString());   // explicit call Author
+    Book b1 = new Book("Java for dummy", a2, 19.95, 1000);
+    System.out.println(b1.toString());   // explicit call Book
+}

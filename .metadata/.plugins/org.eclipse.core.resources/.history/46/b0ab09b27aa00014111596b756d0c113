@@ -1,0 +1,19 @@
+
+public class TestMyComplex {
+	public static void main(String[] args) {
+		MyComplex c1 = new MyComplex(3, 0);
+		MyComplex c2 = new MyComplex(5, 0);
+		MyComplex c3 = new MyComplex(3, 6);
+		
+		System.out.println(c1.toString());   // explicit call MyPoint
+	    
+	    //System.out.println("Perimeter: " + t2.Perimeter());
+	    c1.isReal();
+	    c2.isImaginary();
+	    c3.equals(2, 1);
+	    c3.equals(c1);
+	    c1.magnitude();
+	    c2.argumentInRadians();
+	  }
+
+}

@@ -1,0 +1,11 @@
+
+public class MyPolynomial {
+	private double [] coeffs;
+	
+	//constructor
+	 public MyPolynomial(double... coeffs) {  // varargs
+		      this.coeffs = coeffs;                 // varargs is treated as array
+		  }
+	 
+	 
+}

@@ -1,0 +1,25 @@
+
+public class MyCircle {
+	private int radius;
+	private MyPoint center;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public MyPoint getCenter() {return center;}
+	public void setCenter(MyPoint center) {	this.center = center;}
+
+	public int getRadius() {return radius;}
+	public void setRadius(int radius) {	this.radius = radius;}
+	
+	public int getCenterX() { return center.getX(); }
+	public int getCenterY() { return center.getY();	}
+	
+	public void setCenter(int x, int y) { 
+		center.setX(x); 
+		center.setY(y);
+	}
+
+}

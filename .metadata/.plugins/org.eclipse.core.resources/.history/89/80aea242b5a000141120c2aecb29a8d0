@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class MyComplexApp {
+	
+	public static void main(String[] args) {
+		double num1, num2, num3, num4;
+		//String str;
+		// Enter complex number 1 (real and imaginary part): 1.1 2.2
+		Scanner in = new Scanner(System.in);
+	    System.out.print("Enter comple number (real part): ");
+	    num1 = in.nextDouble();        
+	    System.out.print("Enter comple number (imaginary part): ");
+	    num2 = in.nextDouble();      // Use nextDouble() to read double
+	    MyComplex c1 = new MyComplex(num1, num2);
+	      
+	 // //Enter complex number 2 (real and imaginary part): 3.3 4.4
+	 	Scanner in2 = new Scanner(System.in);
+	 	System.out.print("Enter comple number (real part): ");
+	 	num3 = in2.nextDouble();        
+	 	System.out.print("Enter comple number (imaginary part): ");
+	 	num4 = in2.nextDouble();      // Use nextDouble() to read double
+	 	MyComplex c2 = new MyComplex(num3, num4);
+	     
+	 	System.out.println(c1.toString());
+	 	System.out.println(c1.isReal());
+		System.out.println(c1.isImaginary());
+		
+	 	System.out.println(c2.toString());
+	 	System.out.println(c2.isReal());
+		System.out.println(c2.isImaginary());
+	 	
+		System.out.printf("Equals?");
+		System.out.println(c2.equals(c1));
+		
+		System.out.printf("Addition:");
+		System.out.println(c1.add(c2));
+	}
+
+}
