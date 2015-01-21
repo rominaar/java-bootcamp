@@ -1,0 +1,13 @@
+
+public class House {
+	private Room [] rooms;
+	private String Owner;
+	
+	//Getters and setters
+	public String getOwner() {	return Owner;}
+	public void setOwner(String owner) { Owner = owner; }
+	
+	public Room [] getRooms() {	return rooms; }
+	public void setRooms(Room [] rooms) {this.rooms = rooms;	}
+	
+}

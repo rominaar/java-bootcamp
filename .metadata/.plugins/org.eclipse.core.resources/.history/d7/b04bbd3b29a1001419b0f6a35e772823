@@ -1,0 +1,19 @@
+
+public class Room {
+	private int walls;
+	private int doors;
+	private int windows;
+	
+	//getters & setters
+	public int getWalls() {	return walls;}
+	public void setWalls(int walls) {this.walls = walls;}
+	public int getDoors() {	return doors;}
+	public void setDoors(int doors) {	this.doors = doors;	}
+	public int getWindows() {	return windows;}
+	public void setWindows(int windows) {	this.windows = windows;}
+	
+//	public String toString() 
+	public String toString() {
+		   return "name + " (" + gender + ") at " + email ;
+
+}

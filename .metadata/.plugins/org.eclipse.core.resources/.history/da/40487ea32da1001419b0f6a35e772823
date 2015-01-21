@@ -1,0 +1,23 @@
+
+public class House {
+	private Room [] rooms;
+	private String owner;
+	
+	//Getters and setters
+	public String getOwner() {	return owner;}
+	public void setOwner(String owner) { this.owner = owner; }
+	
+	public Room [] getRooms() {	return rooms; }
+	public void setRooms(Room [] rooms) {this.rooms = rooms;	}
+	
+//	public String toString() 
+	public String toString() {
+		   return "This house have " + rooms.length + "room and the owner is " + owner;
+	}
+	
+	public void printRooms() { 
+    	int i;
+    	for (i=0; i < rooms.length; i++)
+    		System.out.println(rooms[i].toString());
+      }
+}

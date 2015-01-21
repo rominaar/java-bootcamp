@@ -1,0 +1,44 @@
+
+public class Builder {
+	private House house;
+	private int numRooms = 0;
+	
+
+	public House getHouse() {	return house; }
+	public void setHouse(House house) {	this.house = house; }
+	
+	//con este construyo la habitacion
+	public void RoomBuilder(String name, int walls, int doors, int windows) {
+	        new Room(name, walls, doors, windows);
+	}
+	
+	//habitaciones contruids las agrego al array de rooms en house
+	        
+	public void HouseBuilder() {
+		new House();
+	}
+	
+	
+	
+	public void addRooms(Room room) {
+        this.house.addRooms() = room;
+        ++numRooms;
+     }
+	
+	//1st constructor
+	public void BuildHouse (int String name, Author[] authors, double price) {
+				this.name = name;
+				this.authors = authors;
+				this.price = price;
+			}
+			
+	
+        
+     }
+		//2nd constructor
+			public Book (String name, Author[] authors, double price, int qtyInStock) {
+				this.name = name;
+				this.authors = authors;
+				this.price = price;
+				this.qtyInStock = qtyInStock;
+}
