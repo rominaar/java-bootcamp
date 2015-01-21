@@ -50,36 +50,4 @@ public class Builder {
 	
 	
 }
-/*
-	
-	}
 
-
-	public House getHouse() {	return house; }
-	public void setHouse(House house) {	this.house = house; }
-	
-	//con este construyo la habitacion
-	public Room RoomBuilder(String name, int walls, int doors, int windows) {
-	        new Room(name, walls, doors, windows);
-	}
-	
-	public Room [] () {
-    	rooms[numRooms] = room;
-        ++numRooms;
-     }
-	//habitaciones contruids las agrego al array de rooms en house
-	        
-	public void HouseBuilder(Room [] room, String owner ) {
-		new House();
-		new House(room,owner);
-		
-	}
-	
-	addRooms(RoomBuilder(null, 0, 0, 0));
-	
-	public void addRooms(Room room) {
-        this.house.addRooms() = room;
-        ++numRooms;
-     }
-	
-	*/
