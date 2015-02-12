@@ -8,8 +8,6 @@ public interface MeetingCRUD {
 	
 	 public List<Attendee> getAttendees();
 	 
-	 public Attendee getAttendee(int id);
-	 
 	 public Meeting getMeeting(int id);
 	 
 	 public void removeMeeting(int id);

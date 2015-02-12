@@ -1,5 +1,7 @@
 package com.globant.topic6;
 
+import com.globant.topic6.services.*;
+
 public class Attendee {
 	
 	private int idAttendee;
@@ -32,5 +34,5 @@ public class Attendee {
 	public void setIdAttendee(int idAttendee) {
 		this.idAttendee = idAttendee;
 	}
-		
+	
 }

@@ -42,29 +42,36 @@ public class HomeController {
 	}
 	
 	
+	
+  private Meeting m = new Meeting();
+  
+  
 	//get attendees
 	@RequestMapping (value="/attendees", method = RequestMethod.GET)
 	  public @ResponseBody  List<Attendee> getAttendees() { 
-		return MeetingCRUD.getAttendees();
+		List<Attendee> list;
+		list = m.getAttendees();
+		return list;
 	   }
 	  
-	  @RequestMapping (value="/attendee", method = RequestMethod.GET)
+	 /* @RequestMapping (value="/attendee", method = RequestMethod.GET)
 		public @ResponseBody Attendee getAtendee(@RequestParam(value="id", required=true)int id){ 
 	    return MeetingCRUD.getAttendee(id);		  
-		}
+		}*/
 	  
 	  
 	  // get meeting
 	  @RequestMapping(value = "meetings/{id}", method = RequestMethod.GET)
 	  public @ResponseBody Meeting getMeeting(@PathVariable int id) {
-	  return MeetingCRUD.getMeeting(id);
+		  
+		  return m.getMeeting(id);
+		  
 	  }
 	  
 	  // remove meeting
 	  @RequestMapping(value = "meetings/{id}", method = RequestMethod.DELETE)
 	  public @ResponseBody String removeMeeting(@PathVariable int id) {
-	  MeetingCRUD.removeMeeting(id);
-	  String quotes = "\"";
+	  m.removeMeeting(id);
 	  return " The meeting has been remove.";
 	  }
 	  

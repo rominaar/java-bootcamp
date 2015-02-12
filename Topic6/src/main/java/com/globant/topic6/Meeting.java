@@ -2,6 +2,8 @@ package com.globant.topic6;
 
 import java.util.List;
 
+import com.globant.topic6.services.*;
+
 public class Meeting {
 	
 	private int idMeeting;
@@ -15,6 +17,7 @@ public class Meeting {
 		this.idMeeting = id;
 	}
 
+	
 	public List<Attendee> getAttendees() {
 		return attendees;
 	}
@@ -45,6 +48,17 @@ public class Meeting {
 
 	public void setIdMeeting(int idMeeting) {
 		this.idMeeting = idMeeting;
+	}
+
+	
+
+	public Meeting getMeeting(int id) {
+		return this;
+	}
+
+	public void removeMeeting(int id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
