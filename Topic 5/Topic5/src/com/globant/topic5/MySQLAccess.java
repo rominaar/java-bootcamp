@@ -32,22 +32,22 @@ public class MySQLAccess {
 
       // PreparedStatements can use variables and are more efficient
       preparedStatement = connect
-          .prepareStatement("insert into  highschool.teacher values (4, 'Pedro', 'Perez', '1987-10-10')");
+          .prepareStatement("insert into  highschool.teacher values (default, ?, ?, ?)");
+      
       
       preparedStatement.setString(1, "Test");
-      preparedStatement.setString(2, "Testfirstname");
-      preparedStatement.setString(3, "Testlastname");
-      preparedStatement.setString(4, "TestBirthday");
+      preparedStatement.setString(2, "Testlastname");
+      preparedStatement.setString(3, "TestBirthday");
       preparedStatement.executeUpdate();
 
       preparedStatement = connect
-          .prepareStatement("SELECT firstname, lastname, birthday, TEACHER from highschool.teacher");
+          .prepareStatement("SELECT firstname, lastname, birthday from highschool.teacher");
       resultSet = preparedStatement.executeQuery();
       writeResultSet(resultSet);
 
       // Remove again the insert comment
       preparedStatement = connect
-      .prepareStatement("delete from feedback.comments where firstname= 'Pedro'; ");
+      .prepareStatement("delete from highschool.teacher where firstname= ?; ");
       preparedStatement.setString(1, "Test");
       preparedStatement.executeUpdate();
      
