@@ -12,6 +12,5 @@ public interface CartServices {
 
 	public Cart addProduct(long idProduct, int quantity, Customer customer);
 	
-	public Payment saveCart(Customer customer);
 
 }

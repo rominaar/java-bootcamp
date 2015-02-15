@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -17,31 +19,26 @@ public class Customer {
 	@Column(name = "idUser")
 	private Long idCustomer;
 		
+	
+	@Column(name = "lame")
 	private String name;
+	
+	@Column(name = "lastname")
 	private String lastname;
+	
+	@Column(name = "dateofbirth")
 	private String dateofbirth;
+	
+	@Column(name = "username")
 	private String user;
-	private String password;
+	
+	@Column(name = "password")
+	private String password;  
+	
+	@OneToOne(mappedBy = "idCart")
+	@JoinColumn(name = "idCart")
 	private Cart cart;
 	
-	/*  ¿Son necesarias las anotaciones @column???
-	 * 
-	@Column(name = "Name")
-	private String name;
-	
-	@Column(name = "Lastname")
-	private String lastname;
-	
-	@Column(name = "DateOfBirth")
-	private String dateofbirth;
-	
-	@Column(name = "Username")
-	private String user;
-	
-	@Column(name = "Password")
-	private String password;    */
-	
-
 	
 	public Customer (){};
 	

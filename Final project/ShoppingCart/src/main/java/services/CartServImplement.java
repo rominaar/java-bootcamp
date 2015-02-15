@@ -1,8 +1,6 @@
 package services;
 
-import classes.Cart;
-import classes.Customer;
-import classes.Payment;
+import classes.*;
 import DAO.*;
 
 public class CartServImplement implements CartServices{
@@ -10,6 +8,8 @@ public class CartServImplement implements CartServices{
 	private CartDAO cartdao;
 	private CustomerDAO customerdao;
 	private PaymentDAO paymentdao;
+	private ProductPackDAO productpackdao;
+	private ProductDAO productdao;
 
 
 	//get cart by user
@@ -21,18 +21,14 @@ public class CartServImplement implements CartServices{
 		//attached values 
 		customer = customerdao.getCustomer(customer);
 		Payment payment = paymentdao.createPayment(customer, type, customer.getCart());
-		
 		return payment;
 	}
 
 	public Cart addProduct(long idProduct, int quantity, Customer customer) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Payment saveCart(Customer customer) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+		Cart cart = getCart(customer);
+		Product product = productdao.getProduct(idProduct);
+		productpackdao.createProductPack(product, quantity, cart);
+		cart.calculateTotal();
+		return cartdao.save(cart);
+}
 }

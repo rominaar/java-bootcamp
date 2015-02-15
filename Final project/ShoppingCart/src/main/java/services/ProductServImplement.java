@@ -2,22 +2,22 @@ package services;
 
 import java.util.List;
 import classes.Product;
+import DAO.ProductDAO;
 
 public class ProductServImplement implements ProductServices{
+	
+	private ProductDAO productdao;
 
-	public List<Product> getProductsByName(String searchname) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Product> getProductsByName(String name) {
+		return productdao.getProductsByName(name);
 	}
 
-	public List<Product> getProductsByCategory(String searchcategory) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Product> getProductsByCategory(String category) {
+		return productdao.getProductsByCategory(category);
 	}
 
 	public List<Product> getProducts() {
-		// TODO Auto-generated method stub
-		return null;
+		return productdao.getProducts();
 	}
 
 	

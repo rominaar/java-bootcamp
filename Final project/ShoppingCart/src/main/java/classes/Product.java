@@ -11,8 +11,13 @@ public class Product {
 	@Column(name = "idProduct")
 	private Long idProduct;
 	
+	@Column(name = "name")
 	private String name;
+	
+	@Column(name = "price")
 	private double price;
+	
+	@Column(name = "category")
 	private String category;
 	
 	public Product(){}

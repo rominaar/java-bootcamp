@@ -12,5 +12,4 @@ public interface ProductServices {
 
 	public List<Product> getProducts();
 	
-		
 }

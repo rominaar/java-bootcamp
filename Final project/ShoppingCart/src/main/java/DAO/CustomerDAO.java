@@ -29,5 +29,8 @@ public class CustomerDAO {
 	public Customer getCustomer(Customer customer) {
 		return this.customerrepository.findByUser(customer.getUsername());
 	}
+
+
+	
 }
 

@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 public class Cart {
 	
@@ -13,8 +15,14 @@ public class Cart {
 	@Column(name = "idCart")
 	private Long idCart;
 	
+	
+	@Column(name = "total")
 	private double total;
+	
+	@OneToMany(mappedBy = "Cart")
 	private List<ProductPack> productpack;
+	
+	 @OneToOne(mappedBy = "Cart")
 	private Customer customer;
 		
 	public Cart(){}
@@ -50,6 +58,15 @@ public class Cart {
 
 	public void setCustomer(Customer customer) {
 			this.customer = customer;
-		};
+		}
+	
+	
+	public void calculateTotal() {
+		double total = 0;
+		for (ProductPack pp : productpack) {
+			total += pp.getSubtotal();
+			}
+		setTotal(total);
+		}
 
 }

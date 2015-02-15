@@ -1,8 +1,12 @@
 package classes;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 public class ProductPack {
 	
@@ -11,16 +15,26 @@ public class ProductPack {
 	@Column(name = "idProductPack")
 	private Long idProductPack;
 	
+	@Column(name = "quantity")
 	private int quantity;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "idProduct")
 	private Product product;
+	
+	@OneToOne(mappedBy = "idCart")
+	@JoinColumn(name = "idCart")
 	private Cart cart;
+	
+	@Column(name = "subtotal")
 	private double subtotal;
 	
 	public ProductPack(){};
 	
-	public ProductPack(int quantity, Product product){
-		this.setQuantity(quantity);
+	public ProductPack(Product product, int quantity, Cart cart){
 		this.setProduct(product);
+		this.setQuantity(quantity);
+		this.setCart(cart);
 		
 	}
 

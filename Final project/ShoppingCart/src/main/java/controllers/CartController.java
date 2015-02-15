@@ -40,10 +40,5 @@ public class CartController {
 		return cartservices.addProduct(idProduct, quantity, customerconnected.getCustomer());
 	}
 	
-	
-	// save cart (set Cart)
-		@RequestMapping(value = "/save", method = RequestMethod.POST)
-		public @ResponseBody Payment saveCart() {
-			return cartservices.saveCart(customerconnected.getCustomer());
-		}
+
 }

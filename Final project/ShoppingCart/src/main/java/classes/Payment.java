@@ -3,6 +3,8 @@ package classes;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 public class Payment {
 	
@@ -11,9 +13,17 @@ public class Payment {
 	@Column(name = "idPayment")
 	private Long idPayment;
 	
+	@Column(name = "type")
 	private String type;
+	
+	@Column(name = "total")
 	private double total;
+	
+	@OneToOne(mappedBy = "idCart")
+	@JoinColumn(name = "idCart")
 	private Cart cart;
+	
+	@Column(name = "customer")
 	private Customer customer;
 	
 	public Payment(){};
