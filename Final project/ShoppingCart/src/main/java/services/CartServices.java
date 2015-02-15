@@ -6,7 +6,6 @@ import classes.Payment;
 
 public interface CartServices {
 
-
 	public Cart getCart(Customer customer);
 
 	public Payment buyProducts(Customer customer, String type);

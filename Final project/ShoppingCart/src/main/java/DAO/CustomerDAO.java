@@ -24,5 +24,10 @@ public class CustomerDAO {
 		Customer customer = new Customer(name, lastname, dateofbirth, user, password, cart);
 		return this.customerrepository.save(customer);
 	}
+
+
+	public Customer getCustomer(Customer customer) {
+		return this.customerrepository.findByUser(customer.getUsername());
+	}
 }
 

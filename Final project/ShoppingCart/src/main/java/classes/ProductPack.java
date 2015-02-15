@@ -14,7 +14,7 @@ public class ProductPack {
 	private int quantity;
 	private Product product;
 	private Cart cart;
-	private int subtotal;
+	private double subtotal;
 	
 	public ProductPack(){};
 	
@@ -56,11 +56,11 @@ public class ProductPack {
 		this.cart = cart;
 	}
 
-	public int getSubtotal() {
+	public double getSubtotal() {
 		return subtotal;
 	}
 
-	public void setSubtotal(int subtotal) {
+	public void setSubtotal(double subtotal) {
 		this.subtotal = subtotal;
 	}
 	

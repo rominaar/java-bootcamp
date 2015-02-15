@@ -13,7 +13,7 @@ public class Cart {
 	@Column(name = "idCart")
 	private Long idCart;
 	
-	private int total;
+	private double total;
 	private List<ProductPack> productpack;
 	private Customer customer;
 		
@@ -28,11 +28,11 @@ public class Cart {
 			this.idCart = idCart;
 		}
 
-	public int getTotal() {
+	public double getTotal() {
 			return total;
 		}
 
-	public void setTotal(int total) {
+	public void setTotal(double total) {
 			this.total = total;
 		}
 

@@ -12,12 +12,12 @@ public class Product {
 	private Long idProduct;
 	
 	private String name;
-	private int price;
+	private double price;
 	private String category;
 	
 	public Product(){}
 	
-	public Product(String name, int price, String category) {
+	public Product(String name, double price, String category) {
 		this.name = name;
 		this.price = price;
 		this.category = category;
@@ -40,11 +40,11 @@ public class Product {
 		this.name = name;
 	}
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 

@@ -12,12 +12,14 @@ public class Payment {
 	private Long idPayment;
 	
 	private String type;
-	private int total;
+	private double total;
 	private Cart cart;
+	private Customer customer;
 	
 	public Payment(){};
 	
-	public Payment(String type, int total, Cart cart){
+	public Payment(Customer customer, String type, double total, Cart cart){
+		this.setCustomer(customer);
 		this.setType(type);
 		this.setTotal(total);
 		this.setCart(cart);
@@ -40,11 +42,11 @@ public class Payment {
 		this.type = type;
 	}
 
-	public int getTotal() {
+	public double getTotal() {
 		return total;
 	}
 
-	public void setTotal(int total) {
+	public void setTotal(double total) {
 		this.total = total;
 	}
 
@@ -54,6 +56,14 @@ public class Payment {
 
 	public void setCart(Cart cart) {
 		this.cart = cart;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 	
 
