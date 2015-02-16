@@ -1,14 +1,27 @@
 package services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import classes.*;
 import DAO.*;
 
+@Component
 public class CartServImplement implements CartServices{
 	
+	@Autowired
 	private CartDAO cartdao;
+	
+	@Autowired
 	private CustomerDAO customerdao;
+	
+	@Autowired
 	private PaymentDAO paymentdao;
+	
+	@Autowired
 	private ProductPackDAO productpackdao;
+	
+	@Autowired
 	private ProductDAO productdao;
 
 

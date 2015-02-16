@@ -6,6 +6,8 @@ import services.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class AppTest{
@@ -22,6 +24,7 @@ public class AppTest{
 	}
 	
 	
+	
 	@Test
 	 
 	public void CartTest() {
@@ -35,8 +38,21 @@ public class AppTest{
 	Product p3 = new Product(" Bedroom set ", 10500.00, "Furniture");
 	
 	}
+
+	
+	
+	@Test
+	 
+	public void Application1 () {
+		
+		 ApplicationContext context = new ClassPathXmlApplicationContext("/context.xml");
+		 
+		 Customer cu1 = context.getBean("customer", Customer.class);
+	}
+}
 	
 	/*
+	
 	@Test
 	
 	public void CustomerTest() {
@@ -52,7 +68,9 @@ public class AppTest{
 	}
 	
 	
-	*/
+	
+	
+	
 	@Test
 	
     public void testApp() {
@@ -80,5 +98,5 @@ public class AppTest{
     	
     	cartsi.buyProducts(c1, "cash");
     			
-    }
-}
+    } */
+

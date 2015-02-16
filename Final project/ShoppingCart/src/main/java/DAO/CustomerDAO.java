@@ -1,11 +1,15 @@
 package DAO;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import classes.*;
 import repositories.CustomerRepository;
 
-
+@Component
 public class CustomerDAO {
 	
+	@Autowired
 	private CustomerRepository customerrepository;
 	
 	/*private static CustomerDAO customerdao = null;

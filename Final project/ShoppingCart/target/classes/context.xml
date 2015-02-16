@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+
+<context:component-scan base-package="classes"></context:component-scan>
+<context:component-scan base-package="services"></context:component-scan>
+<context:component-scan base-package="repositories"></context:component-scan>
+<context:component-scan base-package="DAO"></context:component-scan>
+<context:component-scan base-package="controllers"></context:component-scan>
+<context:component-scan base-package="App"></context:component-scan>
 
 
 </beans>

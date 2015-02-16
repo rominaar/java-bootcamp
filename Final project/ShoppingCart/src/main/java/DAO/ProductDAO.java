@@ -2,11 +2,16 @@ package DAO;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import classes.Product;
 import repositories.ProductRepository;
 
+@Component
 public class ProductDAO {
 	
+	@Autowired
 	private ProductRepository productrepository;
 
 	public Product getProduct(long idProduct) {

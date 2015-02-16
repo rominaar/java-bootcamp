@@ -1,10 +1,15 @@
 package DAO;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import classes.*;
 import repositories.PaymentRepository;
 
+@Component
 public class PaymentDAO {
 	
+	@Autowired
 	private PaymentRepository paymentrepository;
 
 	public Payment createPayment(Customer customer, String type, Cart cart) {

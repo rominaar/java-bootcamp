@@ -3,14 +3,17 @@ package App;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import classes.Customer;
+
 public class Application {
 	
-	ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-
-     LoadProducts obj = LoadProducts context.getBean("helloWorld");
-
-     obj.getMessage();
-  
+	 public void Application1 () {
+		
+		 ApplicationContext context = new ClassPathXmlApplicationContext("/context.xml");
+		 
+		 Customer cu1 = context.getBean("customer", Customer.class);
+	
+}
 
 	
 }
