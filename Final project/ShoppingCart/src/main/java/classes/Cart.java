@@ -68,5 +68,13 @@ public class Cart {
 			}
 		setTotal(total);
 		}
+	
+
+	public void PrintProductsPack() {
+		for (ProductPack pp : productpack) {
+			System.out.println("PRODUCT: " + pp.getProduct().getName() + "QUANTITY: "+ pp.getQuantity()
+					+ "PRICE: " + pp.getSubtotal());
+			}
+		}
 
 }

@@ -30,5 +30,13 @@ public class CartServImplement implements CartServices{
 		productpackdao.createProductPack(product, quantity, cart);
 		cart.calculateTotal();
 		return cartdao.save(cart);
-}
+		}
+
+	public void PrintProductsPack(Customer customer) {
+		Cart cart = getCart(customer);
+		cart.PrintProductsPack();
+		
+	}
+	
+	
 }

@@ -17,5 +17,9 @@ public class CustomerServImplement implements CustomerServices {
 	public Customer registration(String name, String lastname, String dateofbirth, String user, String password) {
 		return this.customerdao.registration(name, lastname, dateofbirth, user, password);
 	}
+	
+	public Customer getCustomer(){
+		return this.getCustomer();
+	}
 
 }

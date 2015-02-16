@@ -30,7 +30,6 @@ public class CustomerDAO {
 		return this.customerrepository.findByUser(customer.getUsername());
 	}
 
-
 	
 }
 
