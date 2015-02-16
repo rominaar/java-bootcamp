@@ -6,26 +6,26 @@ import DAO.*;
 import static org.junit.Assert.*;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class AppTest extends TestCase {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName ) {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static TestSuite suite() {
-        return new TestSuite( AppTest.class );
-    }
-
+    
+	@Before
+	public void setUp() throws Exception {
+	System.out.println("Start of test");
+	}
+	
+	
+	@After
+	public void tearDown() throws Exception {
+	System.out.println("End of test");
+	}
+	
+	
+	@Test
+	
     
     public void testApp() {
     	
