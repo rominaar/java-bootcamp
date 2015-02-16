@@ -8,6 +8,6 @@ public interface CustomerServices {
 
 	public Customer registration(String name, String lastname, String dateofbirth, String user, String password);
 	
-	public Customer getCustomer();
+	//public Customer getCustomer();
 	
 }

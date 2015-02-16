@@ -22,6 +22,13 @@ public class Product {
 	
 	public Product(){}
 	
+	public Product(Long idproduct, String name, double price, String category) {
+		this.idProduct = idproduct;
+		this.name = name;
+		this.price = price;
+		this.category = category;
+		}
+	
 	public Product(String name, double price, String category) {
 		this.name = name;
 		this.price = price;
