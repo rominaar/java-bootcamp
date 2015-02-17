@@ -1,13 +1,19 @@
 package com.globant.shoppingcart;
 
+import static org.junit.Assert.*;
+import repositories.*;
 import classes.*;
+import repositories.ProductRepository;
 import services.*;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.data.repository.CrudRepository;
 
 
 public class AppTest{
@@ -37,12 +43,33 @@ public class AppTest{
 	Product p2 = new Product(" DVD Player Sony ", 2000.00, "Electronics");
 	Product p3 = new Product(" Bedroom set ", 10500.00, "Furniture");
 	
+	//Assert.assertEquals("NAME:  TV LED 32'' Samsung PRICE: 5000.0CATEGORY: Electronics", p1.ShowProduct() );
+	
+	
+	
 	}
+	
+@Test
+	
+	public void CustomerTest() {
+		
+		CustomerServImplement customersi= new CustomerServImplement();
+    	
+		
+    	//New customer 
+		customersi.registration("Romina", "Acuña", "24-11-1989", "rominaar", "123456");
+    	
+    	//Login
+    	customersi.login("rominaar","123456");	
+	}
+}
+	
+	
+	
 
-	
-	
-	@Test
-	 
+	/*
+    
+    @Test
 	public void Application1 () {
 		
 		 ApplicationContext context = new ClassPathXmlApplicationContext("/context.xml");
@@ -51,7 +78,11 @@ public class AppTest{
 	}
 }
 	
-	/*
+	
+	
+	
+}
+	
 	
 	@Test
 	
@@ -68,7 +99,7 @@ public class AppTest{
 	}
 	
 	
-	
+}
 	
 	
 	@Test
@@ -98,5 +129,35 @@ public class AppTest{
     	
     	cartsi.buyProducts(c1, "cash");
     			
-    } */
+    } 
+    
+    @Test
+	public void Application(){
+		 
+	    CrudRepository repository;
+	    
+	        ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
+	        repository = context.getBean(ProductRepository.class);
+	 
+	      
+	        createProduct(" TV LED 32'' Samsung ", 5000.00, "Electronics", repository);
+	 
+	        ((AbstractApplicationContext) context).close();
+	 
+	    }
+	 
+	    private static void createProduct(String name, double price, String category, CrudRepository repository){
+	 
+	        Product pro = new Product (name, price, category);
+	        repository.save(pro);
+	    }
+	 
+    
+    
+	
+
+	
+    *
+    *
+    */
 

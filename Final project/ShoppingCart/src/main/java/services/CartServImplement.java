@@ -1,12 +1,15 @@
 package services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import classes.*;
 import DAO.*;
 
-@Component
+@Service
+@Configurable
 public class CartServImplement implements CartServices{
 	
 	@Autowired
@@ -26,10 +29,13 @@ public class CartServImplement implements CartServices{
 
 
 	//get cart by user
+	@Override
 	public Cart getCart(Customer customer) {
 		return customerdao.getCustomer(customer).getCart();
 	}
 
+	@Override
+	@Transactional
 	public Payment buyProducts(Customer customer, String type) {
 		//attached values 
 		customer = customerdao.getCustomer(customer);
@@ -37,6 +43,8 @@ public class CartServImplement implements CartServices{
 		return payment;
 	}
 
+	@Override
+	@Transactional
 	public Cart addProduct(long idProduct, int quantity, Customer customer) {
 		Cart cart = getCart(customer);
 		Product product = productdao.getProduct(idProduct);

@@ -2,12 +2,13 @@ package classes;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 public class Product {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "idProduct")
 	private Long idProduct;
 	
@@ -66,7 +67,11 @@ public class Product {
 
 	public void setCategory(String category) {
 		this.category = category;
-	};
+	}
+	
+	public void ShowProduct(){
+		System.out.println("NAME: " + name + "PRICE: " + price + "CATEGORY: " + category);
+	}
 	
 
 }

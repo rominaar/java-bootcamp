@@ -12,17 +12,6 @@ public class CustomerDAO {
 	@Autowired
 	private CustomerRepository customerrepository;
 	
-	/*private static CustomerDAO customerdao = null;
-	
-	 public CustomerDAO(){}
-	
-	public static CustomerDAO getInstance() {
-		if (customerdao == null) {
-			customerdao = new CustomerDAO();
-		}
-		return customerdao;
-	}*/
-	
 
 	public Customer login(String user, String password) {
 		Customer customer = this.customerrepository.findByUser(user);
@@ -45,6 +34,17 @@ public class CustomerDAO {
 	public Customer getCustomer(Customer customer) {
 		return this.customerrepository.findByUser(customer.getUsername());
 	}
+	
+	/*private static CustomerDAO customerdao = null;
+	
+	 public CustomerDAO(){}
+	
+	public static CustomerDAO getInstance() {
+		if (customerdao == null) {
+			customerdao = new CustomerDAO();
+		}
+		return customerdao;
+	}*/
 
 	
 }
