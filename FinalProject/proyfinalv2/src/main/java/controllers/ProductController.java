@@ -24,7 +24,7 @@ public class ProductController {
 	    }
 	    
 	    
-	    @RequestMapping(value = "/user", method = RequestMethod.POST)
+	    @RequestMapping(value = "/product", method = RequestMethod.POST)
 	    public Product createProduct(@RequestBody @Valid final Product product) {
 	        return productServices.save(product);
 	    }
