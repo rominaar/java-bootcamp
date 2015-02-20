@@ -10,6 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.globant.proyfinal.classes.Product;
+
 
 /**
  * Handles requests for the application home page.
@@ -34,6 +39,17 @@ public class HomeController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		return "home";
+	}
+	
+	
+	@RequestMapping (value="/productrprueba", method = RequestMethod.GET)
+	public @ResponseBody Product ObtenerProduct (@RequestParam(value="id", required=true)int idProduct){ 
+	  Product p = new Product();
+	  p.setName("TV Philco");
+	  p.setPrice(4000);
+	  p.setCategory("Electronics");
+	  return p;
+	  
 	}
 	
 }

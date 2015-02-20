@@ -26,8 +26,7 @@ public class CartServImplementTest {
 	    @Mock
 	    private ProductPackRepository productpackrepository;
 	    
-	    @Mock
-	    private ProductRepository productrepository;
+	    
 	    
 	    @Mock
 	    private PaymentRepository paymentrepository;
@@ -38,7 +37,7 @@ public class CartServImplementTest {
 
 	    @Before
 	    public void setUp() {
-	    	cartservices = new CartServImplement(cartrepository, customerrepository, paymentrepository, productpackrepository, productrepository);
+	    	cartservices = new CartServImplement(cartrepository, customerrepository, paymentrepository, productpackrepository);
 	    }
 
 	    @Test

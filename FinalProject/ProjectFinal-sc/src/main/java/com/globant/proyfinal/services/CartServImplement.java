@@ -16,16 +16,16 @@ public class CartServImplement implements CartServices {
     private final CustomerRepository customerrepository;
     private final PaymentRepository paymentrepository;
     private final ProductPackRepository productpackrepository;
-    private final ProductRepository productrepository;
+ 
     
     @Inject
     public CartServImplement(final CartRepository cartrepository, final CustomerRepository customerrepository,
-    						final PaymentRepository paymentrepository, final ProductPackRepository productpackrepository, final ProductRepository productrepository) {
+    						final PaymentRepository paymentrepository, final ProductPackRepository productpackrepository) {
         this.cartrepository = cartrepository;
         this.customerrepository = customerrepository;
         this.paymentrepository = paymentrepository;
         this.productpackrepository = productpackrepository;
-        this.productrepository = productrepository;
+        
         
     }
    
@@ -44,7 +44,8 @@ public class CartServImplement implements CartServices {
 		return createPayment(customer, type, customer.getCart());		
 		
 	}
-
+    
+    @Override
 	@Transactional
 	public Cart addProduct(Product product, int quantity, Customer customer) {
 		Cart cart = getCart(customer);
@@ -60,8 +61,7 @@ public class CartServImplement implements CartServices {
 	}
 
 	public Cart getCart(Customer customer) {
-		
-		//revisar!!
+	
 		Customer c1 = customerrepository.findOne(customer.getIdCustomer());
 		if (c1 == null){System.out.println("Customer not exist");} 
 		
@@ -80,7 +80,9 @@ public class CartServImplement implements CartServices {
 	public void createProductPack(Product product, int quantity, Cart cart) {
 		this.productpackrepository.save(new ProductPack(product, quantity, cart));
 	}
-		
+
+
+
 
 
 }
